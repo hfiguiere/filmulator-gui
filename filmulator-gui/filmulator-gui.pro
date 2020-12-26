@@ -1,3 +1,7 @@
+isEmpty(PREFIX) {
+ PREFIX = /usr
+}
+
 # Add more folders to ship with the application, here
 folder_01.source = qml/filmulator-gui
 folder_01.target = qml
@@ -60,12 +64,12 @@ SOURCES += qml/filmulator-gui/*.qml \
 }
 
 # Installation path
-unix:target.path = /usr/lib/filmulator-gui
-unix:desktop.path = /usr/share/applications
+unix:target.path = $$PREFIX/lib/filmulator-gui
+unix:desktop.path = $$PREFIX/share/applications
 
 unix:desktop.files += ./filmulator_gui.desktop
 
-unix:appstream.path = /usr/share/metainfo
+unix:appstream.path = $$PREFIX/share/metainfo
 unix:appstream.files += ./resources/linux/org.filmulator.Filmulator.metainfo.xml
 
 # win32 {
